@@ -44,6 +44,58 @@ const VigenereSteps = () => {
             Follow these five simple steps to encrypt a message using the Vigenère cipher
           </p>
           
+          <Card className="p-8 bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-primary/20 mb-12">
+            <h3 className="text-2xl font-bold mb-6 text-center">Example: Encrypting "HELLO" with key "KEY"</h3>
+            <div className="grid md:grid-cols-5 gap-6">
+              <div className="space-y-3">
+                <div className="text-center">
+                  <div className="text-sm font-semibold text-primary mb-2">Step 1</div>
+                  <div className="font-mono text-xl font-bold bg-primary/10 px-4 py-3 rounded-lg">KEY</div>
+                  <div className="text-xs text-muted-foreground mt-2">Our keyword</div>
+                </div>
+              </div>
+              
+              <div className="space-y-3">
+                <div className="text-center">
+                  <div className="text-sm font-semibold text-secondary mb-2">Step 2</div>
+                  <div className="font-mono text-xl font-bold bg-secondary/10 px-4 py-3 rounded-lg">KEYKE</div>
+                  <div className="text-xs text-muted-foreground mt-2">Repeated to match HELLO length</div>
+                </div>
+              </div>
+              
+              <div className="space-y-3">
+                <div className="text-center">
+                  <div className="text-sm font-semibold text-accent mb-2">Step 3</div>
+                  <div className="space-y-1 bg-accent/10 px-4 py-3 rounded-lg">
+                    <div className="font-mono text-sm">H=7, E=4, L=11</div>
+                    <div className="font-mono text-sm">K=10, E=4, Y=24</div>
+                  </div>
+                  <div className="text-xs text-muted-foreground mt-2">Convert to numbers</div>
+                </div>
+              </div>
+              
+              <div className="space-y-3">
+                <div className="text-center">
+                  <div className="text-sm font-semibold text-primary mb-2">Step 4</div>
+                  <div className="space-y-1 bg-primary/10 px-4 py-3 rounded-lg">
+                    <div className="font-mono text-sm">7+10=17</div>
+                    <div className="font-mono text-sm">4+4=8</div>
+                    <div className="font-mono text-sm">11+24=9</div>
+                  </div>
+                  <div className="text-xs text-muted-foreground mt-2">Add & mod 26</div>
+                </div>
+              </div>
+              
+              <div className="space-y-3">
+                <div className="text-center">
+                  <div className="text-sm font-semibold text-secondary mb-2">Step 5</div>
+                  <div className="font-mono text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent bg-accent/10 px-4 py-3 rounded-lg">RIJVS</div>
+                  <div className="text-xs text-muted-foreground mt-2">Final ciphertext!</div>
+                </div>
+              </div>
+            </div>
+          </Card>
+          
           <div className="grid md:grid-cols-5 gap-6">
             {steps.map((step, index) => {
               const Icon = step.icon;
