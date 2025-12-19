@@ -8,6 +8,7 @@ const Hero = () => {
     element?.scrollIntoView({ behavior: "smooth" });
   };
 
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5" />
